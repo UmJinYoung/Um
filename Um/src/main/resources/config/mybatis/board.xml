@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="board">
+
+	<insert id="insert" parameterType="net.hb.board.BoardDTO">
+		insert into board values(board_seq.nextval, #{id}, #{title}, sysdate, #{content}, #{img_file_name})
+	</insert>		
+	
+	<select id="selectAll" resultType="net.hb.board.BoardDTO">
+ 		select * from(
+ 		select rownum as rn, b.* from (select * from board where ${skey} like '%' || #{sval} || '%' order by nalja) b
+ 		) where rn between #{start} and #{end}
+ 	</select>
+ 	
+ 	<select id="countAllSearch" resultType="int">
+ 	   select  count(*)  from board where ${skey} like '%' || #{sval} || '%' 	   
+ 	</select> 
+ 	
+ 	<select id="countAll" resultType="int">
+ 	   select  count(*)  from board 	   
+ 	</select>
+ 	
+ 	<select id="detail" parameterType="int" resultType="net.hb.board.BoardDTO">
+		select * from board where idx=#{idx}
+	</select>
+	
+	<select id="delete">
+		delete from board where idx=#{idx}
+	</select>
+	
+	<select id="preEdit" parameterType="int" resultType="net.hb.board.BoardDTO">
+		select * from board where idx=#{idx}
+	</select> 	
+	
+	<update id="edit" parameterType="net.hb.board.BoardDTO">
+	    update board set title=#{title}, nalja=sysdate, content=#{content}, img_file_name=#{img_file_name}
+	    where idx=#{idx}
+	</update>
+	
+</mapper>

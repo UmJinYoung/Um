@@ -1,0 +1,49 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+<TITLE>[test_divspan4.html]</TITLE>
+ <style type="text/css">
+	*{font-size:30pt; font-weight:bold;}
+		
+	.thumbnail img{
+	  width:160px; 
+	  height:100px;
+	  padding:1px;
+	}
+ </style>
+
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+ 
+ 
+ <script type="text/javascript">
+  $(function(){
+	  $(".thumbnail > a").click(function(){ 
+		  var path=$(this).attr("href");
+		  $(this).parent().prev().find('img').attr({src:path}).css("opacity","0.3").stop().animate({opacity:1},5000);
+		  //$(this).parent().prev().find('#target').attr({src:path}).css("opacity","0.3").stop().animate({opacity:1},5000);
+		  //$(this).parent().prev().find('#target').attr({src:path});
+		  //$(this).parent().find('#target').attr({src:path}); //안됨
+		  //$(this).prev().find('#target').attr({src:path});  //안됨
+		  //$(this).parent().prev().find('#target').attr({src:path}); 
+		  //$('#target').attr({src:path}); //제일쉬운접근방법
+		  return false; //꼭필요
+	  });
+  });
+ </script>
+</HEAD>
+<BODY>
+ <div>
+    <img src="images/2.jpg"  id="target" width="510" height="340">
+ </div>
+
+  <div class="thumbnail">
+	<a href="images/1.jpg"><img src="images/1.jpg"></a>
+	<a href="images/2.jpg"><img src="images/2.jpg"></a>
+	<a href="images/3.jpg"><img src="images/3.jpg"></a>
+  </div>  
+  Jeju  paradise  4:19 4:35
+</BODY>
+</HTML>

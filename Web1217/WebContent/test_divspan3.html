@@ -1,0 +1,49 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+<TITLE>[test_divspan3.html]</TITLE>
+	<style type="text/css">
+		*{font-size:30pt; font-weight:bold;}
+		.thumbnail{
+			width:120px; height:100px;
+			float:left;
+			list-style:none;
+			margin:0px;	padding:0px;
+		}
+		.thumbnail li{
+			width:100px; height:100px;
+			padding:5px 10px;
+		}
+		.thumbnail img{
+			width:100px; height:100px;
+		}
+
+		.view img{
+			margin-top:5px;
+			width:700px; height:320px;
+		}
+
+	</style>
+
+ <script type="text/javascript">
+    function setImage(num){
+  	    var image_list=["images/1.jpg", "images/2.jpg", "images/3.jpg" ];
+  	    var image=document.getElementById("target");
+  	    image.src=image_list[num];
+      }
+  </script>
+</HEAD>
+<BODY>
+	<ul class="thumbnail">
+		<li><a href="#" onclick="setImage(0)"><img src="images/1.jpg"></a></li>
+		<li><a href="#" onclick="setImage(1)"><img src="images/2.jpg"></a></li>
+		<li><a href="#" onclick="setImage(2)"><img src="images/3.jpg"></a></li>
+	</ul>
+
+	<div class="view">
+		<img src="images/2.jpg"  id="target">
+	</div>
+
+	우리나라 좋은나라 금수강산
+</BODY>
+</HTML>

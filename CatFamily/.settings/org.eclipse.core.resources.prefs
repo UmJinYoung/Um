@@ -1,0 +1,14 @@
+eclipse.preferences.version=1
+encoding//WebContent/map.jsp=UTF-8
+encoding//WebContent/test.jsp=UTF-8
+encoding//src/net/hb/common/DBDAO.java=UTF-8
+encoding//src/net/hb/mvc/DeleteController.java=UTF-8
+encoding//src/net/hb/mvc/DetailController.java=UTF-8
+encoding//src/net/hb/mvc/EditController.java=UTF-8
+encoding//src/net/hb/mvc/InsertController.java=UTF-8
+encoding//src/net/hb/mvc/idCheckController.java=UTF-8
+encoding//src/net/hb/mvc/logincontroller.java=UTF-8
+encoding//src/net/hb/mvc/qaController.java=UTF-8
+encoding//src/net/hb/mvc/writeController.java=UTF-8
+encoding/<project>=UTF-8
+encoding/WebContent=UTF-8
